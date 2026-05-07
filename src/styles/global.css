@@ -1080,6 +1080,16 @@ footer strong {
   .hero-actions { justify-content: center; }
   .hero-stats { justify-content: center; }
   .hero-visual { display: none; }
+  .city-hero .hero-visual {
+    display: flex;
+  }
+  .city-hero .hero-inner {
+    gap: 2.5rem;
+  }
+  .city-hero .hero-city-photo {
+    width: min(520px, 100%);
+    aspect-ratio: 16 / 10;
+  }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .steps-wrapper {
     grid-template-columns: 1fr;
