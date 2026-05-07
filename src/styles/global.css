@@ -830,6 +830,11 @@ section {
   padding-top: 0;
 }
 
+.city-photo-section.after-hero {
+  background: var(--navy);
+  padding: 0 1.5rem 4rem;
+}
+
 .city-photo {
   max-width: 1000px;
   margin: 0 auto;
@@ -852,6 +857,10 @@ section {
   font-size: 0.82rem;
   line-height: 1.5;
   margin-top: 0.75rem;
+}
+
+.after-hero .city-photo figcaption {
+  color: rgba(255,255,255,0.62);
 }
 
 .city-photo figcaption a {
@@ -1080,16 +1089,6 @@ footer strong {
   .hero-actions { justify-content: center; }
   .hero-stats { justify-content: center; }
   .hero-visual { display: none; }
-  .city-hero .hero-visual {
-    display: flex;
-  }
-  .city-hero .hero-inner {
-    gap: 2.5rem;
-  }
-  .city-hero .hero-city-photo {
-    width: min(520px, 100%);
-    aspect-ratio: 16 / 10;
-  }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .steps-wrapper {
     grid-template-columns: 1fr;
