@@ -10,6 +10,13 @@ export const cityPages = [
     introTag: 'Local Conditions',
     introTitle: 'Designed for Coastal Homes, Rentals and Hospitality',
     intro: 'In the Paphos district, pest activity often starts around warm kitchens, pool areas, garden walls, storage rooms and short-stay accommodation with frequent guest turnover. We look for the cause first, then combine treatment with practical steps that reduce repeat call-outs.',
+    image: {
+      src: '/images/paphos-harbour.jpg',
+      alt: 'Yachts moored in Paphos Harbour, Cyprus',
+      caption: 'Paphos Harbour, close to Kato Paphos and the coastal properties we serve.',
+      credit: 'Photo: Ronald Saunders, CC BY-SA 2.0 via Wikimedia Commons',
+      creditUrl: 'https://commons.wikimedia.org/wiki/File:Flickr_-_ronsaunders47_-_Paphos_Harbour_1._Cyprus.jpg',
+    },
     servicesIntro: 'Each visit is adapted to the building, the pest species and how the space is used day to day.',
     services: [
       ['Ant Control', 'Baiting and perimeter work for trails around patios, terraces, kitchen doors and ground-floor apartments.'],

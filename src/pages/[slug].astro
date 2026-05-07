@@ -130,6 +130,18 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
     </div>
   </section>
 
+  {page.image && (
+    <section class="city-photo-section">
+      <figure class="city-photo">
+        <img src={page.image.src} alt={page.image.alt} loading="eager" />
+        <figcaption>
+          <span>{page.image.caption}</span>
+          <a href={page.image.creditUrl} target="_blank" rel="noreferrer">{page.image.credit}</a>
+        </figcaption>
+      </figure>
+    </section>
+  )}
+
   <section class="services city-services" id="services">
     <div class="section-header">
       <span class="section-tag">Treatment Types</span>
