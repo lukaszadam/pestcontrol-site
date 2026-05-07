@@ -1,4 +1,4 @@
-const siteUrl = 'https://xspestandtermitescontrol.com.cy';
+const siteUrl = 'https://pestcontrolcyprus.com';
 
 export function GET() {
   return new Response(
