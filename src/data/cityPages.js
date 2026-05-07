@@ -196,6 +196,6 @@ export const cityPages = [
 export const cityNavItems = cityPages.map(({ city, slug }) => ({
   city,
   slug,
-  label: `Pest Control ${city}`,
+  label: city,
   href: `/${slug}/`,
 }));
