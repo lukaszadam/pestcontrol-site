@@ -1,6 +1,6 @@
 import { cityPages } from '../data/cityPages.js';
 
-const siteUrl = 'https://pestcontrolcyprus.com';
+const siteUrl = 'https://xspestandtermitescontrol.com.cy';
 const lastmod = '2026-05-07';
 
 const urls = [
