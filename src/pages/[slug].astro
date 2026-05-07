@@ -1,0 +1,267 @@
+---
+import '../styles/global.css';
+import { cityNavItems, cityPages } from '../data/cityPages.js';
+
+export function getStaticPaths() {
+  return cityPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{page.title}</title>
+  <meta name="description" content={page.description} />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="2.5" ry="1.8" fill="white"/>
+          <ellipse cx="12" cy="13" rx="3.5" ry="2.5" fill="white"/>
+          <ellipse cx="12" cy="19" rx="2" ry="1.8" fill="white"/>
+          <line x1="8.5" y1="11" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="13" x2="5" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="15" x2="5" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="11" x2="19" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="13" x2="19" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="15" x2="19" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Pest<span>Control</span> Cyprus</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="#areas">Areas</a>
+        <div class="nav-dropdown-menu">
+          {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </li>
+      <li><a href="#why-local">Why Local</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero city-hero">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-accent-circle"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">{page.eyebrow}</span>
+        <h1>Pest Control<br/><span>{page.city}</span></h1>
+        <p class="hero-subtitle">{page.subtitle}</p>
+        <p class="hero-desc">{page.hero}</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Request Inspection</a>
+          <a href="tel:+35794107560" class="btn-outline">Call Now</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">24/7</div>
+            <div class="hero-stat-label">Phone Support</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">30</div>
+            <div class="hero-stat-label">Day Guarantee</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">EU</div>
+            <div class="hero-stat-label">Approved Products</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-house-circle">
+          <svg width="230" height="230" viewBox="0 0 230 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="48" y="118" width="134" height="72" rx="3" fill="#e8e6e1" opacity="0.92"/>
+            <polygon points="38,120 115,55 192,120" fill="#C0392B"/>
+            <rect x="95" y="145" width="34" height="45" rx="2" fill="#1a2340"/>
+            <rect x="60" y="132" width="30" height="25" rx="2" fill="#1a2340" opacity="0.82"/>
+            <rect x="140" y="132" width="30" height="25" rx="2" fill="#1a2340" opacity="0.82"/>
+            <path d="M36 190 C62 178 78 180 104 190 C130 200 154 178 194 190" stroke="#4a7a4a" stroke-width="7" stroke-linecap="round" opacity="0.65"/>
+            <circle cx="177" cy="68" r="18" fill="#e8e6e1" opacity="0.2"/>
+            <path d="M164 91 C173 79 188 78 197 91" stroke="#e8e6e1" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+          </svg>
+          <div class="hero-bug-badge top-left">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <ellipse cx="12" cy="7" rx="2.5" ry="1.8" fill="white"/>
+              <ellipse cx="12" cy="13" rx="3.5" ry="2.5" fill="white"/>
+              <ellipse cx="12" cy="19.5" rx="2" ry="1.8" fill="white"/>
+              <line x1="8.5" y1="11" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8.5" y1="13" x2="5" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="8.5" y1="15" x2="5" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15.5" y1="11" x2="19" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15.5" y1="13" x2="19" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15.5" y1="15" x2="19" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-bug-badge top-right">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="3" fill="rgba(255,255,255,0.6)"/>
+              <ellipse cx="12" cy="16" rx="5" ry="3.5" fill="rgba(255,255,255,0.6)"/>
+              <line x1="7" y1="14" x2="3" y2="12" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="17" y1="14" x2="21" y2="12" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="city-intro">
+    <div class="city-intro-inner">
+      <div>
+        <span class="section-tag">{page.introTag}</span>
+        <h2>{page.introTitle}</h2>
+      </div>
+      <p>{page.intro}</p>
+    </div>
+  </section>
+
+  <section class="services city-services" id="services">
+    <div class="section-header">
+      <span class="section-tag">Treatment Types</span>
+      <h2>Targeted Help for Local Pest Problems</h2>
+      <div class="section-divider"></div>
+      <p>{page.servicesIntro}</p>
+    </div>
+    <div class="services-grid city-service-grid">
+      {page.services.map(([title, body], index) => (
+        <div class="service-card">
+          <div class={`service-icon-circle ${index % 2 ? 'dark' : ''}`}>
+            <span class="service-letter">{serviceLetters[index]}</span>
+          </div>
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="city-areas" id="areas">
+    <div class="section-header">
+      <span class="section-tag">Nearby Coverage</span>
+      <h2>{page.areasTitle}</h2>
+      <div class="section-divider"></div>
+      <p>Tell us your area when you enquire and we will confirm the earliest suitable visit.</p>
+    </div>
+    <div class="areas-grid">
+      {page.areas.map((area) => <div class="area-chip"><span class="area-dot"></span>{area}</div>)}
+    </div>
+  </section>
+
+  <section class="why-us" id="why-local">
+    <div class="why-us-bg"></div>
+    <div class="section-header">
+      <span class="section-tag">How We Work</span>
+      <h2>{page.whyTitle}</h2>
+      <div class="section-divider"></div>
+      <p>{page.whyIntro}</p>
+    </div>
+    <div class="features-grid">
+      {page.features.map(([title, body], index) => (
+        <div class="feature-block">
+          <div class="feature-icon-wrap">
+            <span class="feature-letter">{index + 1}</span>
+          </div>
+          <div class="feature-text">
+            <h3>{title}</h3>
+            <p>{body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Request a Visit</span>
+        <h2>Book Pest Control in {page.city}</h2>
+        <div class="section-divider" style="margin: 0.8rem 0 1.2rem;"></div>
+        <p>Share your area, property type and the signs you have noticed. We will contact you with the next available appointment.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6.6 10.8C7.8 13.2 9.8 15.2 12.2 16.4L14 14.6C14.2 14.4 14.6 14.3 14.9 14.5C16 14.9 17.2 15.1 18.5 15.1C19 15.1 19.4 15.5 19.4 16V18.5C19.4 19 19 19.4 18.5 19.4C9.9 19.4 2.9 12.4 2.9 3.8C2.9 3.3 3.3 2.9 3.8 2.9H6.3C6.8 2.9 7.2 3.3 7.2 3.8C7.2 5.1 7.4 6.3 7.8 7.4C7.9 7.7 7.8 8.1 7.6 8.3Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <a href="tel:+35794107560">+357 94 107 560</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="2"/>
+              <path d="M3 7 L12 13 L21 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:pestcontrolcyprus@protonmail.com">pestcontrolcyprus@protonmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" name={`${page.slug}-contact`} method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value={`${page.slug}-contact`} />
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city-area">{page.city} Area</label>
+            <input type="text" id="city-area" name="city-area" placeholder={page.areaPlaceholder} value={page.city} />
+          </div>
+          <div class="form-group">
+            <label for="pest">Pest Type</label>
+            <select id="pest" name="pest">
+              <option value="">What pest?</option>
+              <option>Ants</option>
+              <option>Cockroaches</option>
+              <option>Rodents</option>
+              <option>Bed Bugs</option>
+              <option>Mosquitoes</option>
+              <option>Wasps / Hornets</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="message" placeholder="Property type, pest signs, urgency, preferred time..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send {page.city} Request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. Local pest treatments for {page.city} and island-wide coverage.</p>
+  </footer>
+
+</body>
+</html>

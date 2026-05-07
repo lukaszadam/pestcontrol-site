@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { cityNavItems } from '../data/cityPages.js';
 ---
 
 <!DOCTYPE html>
@@ -36,7 +37,12 @@ import '../styles/global.css';
       <li><a href="#services">Services</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#areas">Areas</a></li>
+      <li class="nav-dropdown">
+        <a href="#areas">Areas</a>
+        <div class="nav-dropdown-menu">
+          {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
     </ul>
   </nav>
@@ -374,15 +380,15 @@ import '../styles/global.css';
       <p>We operate island-wide, with dedicated teams in each major city for rapid response.</p>
     </div>
     <div class="areas-grid">
-      <div class="area-chip"><span class="area-dot"></span>Nicosia</div>
-      <div class="area-chip"><span class="area-dot"></span>Limassol</div>
-      <div class="area-chip"><span class="area-dot"></span>Larnaca</div>
-      <div class="area-chip"><span class="area-dot"></span>Paphos</div>
+      <a class="area-chip" href="/pest-control-nicosia/"><span class="area-dot"></span>Nicosia</a>
+      <a class="area-chip" href="/pest-control-limassol/"><span class="area-dot"></span>Limassol</a>
+      <a class="area-chip" href="/pest-control-larnaca/"><span class="area-dot"></span>Larnaca</a>
+      <a class="area-chip" href="/pest-control-paphos/"><span class="area-dot"></span>Paphos</a>
       <div class="area-chip"><span class="area-dot"></span>Famagusta</div>
       <div class="area-chip"><span class="area-dot"></span>Kyrenia</div>
       <div class="area-chip"><span class="area-dot"></span>Paralimni</div>
-      <div class="area-chip"><span class="area-dot"></span>Ayia Napa</div>
-      <div class="area-chip"><span class="area-dot"></span>Protaras</div>
+      <a class="area-chip" href="/pest-control-agia-napa/"><span class="area-dot"></span>Agia Napa</a>
+      <a class="area-chip" href="/pest-control-protaras/"><span class="area-dot"></span>Protaras</a>
       <div class="area-chip"><span class="area-dot"></span>Troodos Region</div>
     </div>
     <p class="areas-note">Not sure if we cover your area? <a href="#contact" style="color: var(--red); font-weight:600;">Contact us</a> — we travel throughout the island.</p>

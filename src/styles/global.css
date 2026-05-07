@@ -93,6 +93,13 @@ nav {
   list-style: none;
 }
 
+.nav-dropdown {
+  position: relative;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 600;
@@ -106,6 +113,44 @@ nav {
 
 .nav-links a:hover {
   color: var(--red-light);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  min-width: 210px;
+  background: var(--white);
+  border: 1px solid rgba(26,35,64,0.12);
+  border-radius: 4px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+  padding: 0.45rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  color: var(--navy);
+  padding: 0.7rem 0.8rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--gray-light);
+  color: var(--red);
 }
 
 .nav-cta {
@@ -684,6 +729,7 @@ section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--navy);
+  text-decoration: none;
   transition: all 0.2s;
 }
 
@@ -710,6 +756,57 @@ section {
   margin-top: 2rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+/* ── CITY PAGES ── */
+.city-hero {
+  min-height: 86vh;
+}
+
+.city-hero .hero h1,
+.city-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.city-intro {
+  background: var(--white);
+}
+
+.city-intro-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.city-intro h2 {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.city-intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.city-service-grid .service-card {
+  min-height: 230px;
+}
+
+.service-letter,
+.feature-letter {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: white;
+  line-height: 1;
+}
+
+.city-areas {
+  background: var(--white);
 }
 
 /* ── CONTACT ── */
@@ -868,6 +965,7 @@ footer strong {
   .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .city-intro-inner { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
 }
 
 @media (max-width: 600px) {
