@@ -1,0 +1,243 @@
+---
+import '../../styles/global.css';
+import { cityNavItems } from '../../data/cityPages.js';
+
+const articles = [
+  {
+    slug: 'pest-control-chemicals-pet-safety',
+    title: 'How Pest Control Chemicals Actually Work (And Are They Safe for Pets?)',
+    description: "Modern pest control chemicals are more targeted than ever — but are they safe around your pets? We break down how each chemical class works and what every pet owner needs to know before treatment.",
+    category: 'Homeowners & Pet Owners',
+    date: 'May 8, 2026',
+    readTime: 8,
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pest Control Blog Cyprus — Tips, Guides & Advice</title>
+  <meta name="description" content="Expert pest control advice for Cyprus homeowners and businesses. Guides on ants, cockroaches, rodents, bed bugs, mosquitoes and more." />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="2.5" ry="1.8" fill="white"/>
+          <ellipse cx="12" cy="13" rx="3.5" ry="2.5" fill="white"/>
+          <ellipse cx="12" cy="19" rx="2" ry="1.8" fill="white"/>
+          <line x1="8.5" y1="11" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="13" x2="5" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="15" x2="5" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="11" x2="19" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="13" x2="19" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="15" x2="19" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Pest<span>Control</span> Cyprus</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/#areas">Areas</a>
+        <div class="nav-dropdown-menu">
+          {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </li>
+      <li><a href="/blog/" style="color: var(--red);">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <header class="blog-index-hero">
+    <div class="blog-index-hero-inner">
+      <span class="section-tag">Knowledge Base</span>
+      <h1>Pest Control<br/><span>Blog</span></h1>
+      <p>Practical guides and expert advice for Cyprus homeowners and businesses.</p>
+    </div>
+  </header>
+
+  <section class="blog-index-section">
+    <div class="blog-index-inner">
+      <div class="blog-grid">
+        {articles.map((article) => (
+          <a class="blog-card" href={`/blog/${article.slug}/`}>
+            <div class="blog-card-category">{article.category}</div>
+            <h2 class="blog-card-title">{article.title}</h2>
+            <p class="blog-card-desc">{article.description}</p>
+            <div class="blog-card-meta">
+              <span>{article.date}</span>
+              <span class="blog-meta-dot">·</span>
+              <span>{article.readTime} min read</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-cta-banner">
+    <div class="blog-cta-inner">
+      <h2>Got a Pest Problem?</h2>
+      <p>Don't wait — fast, licensed pest control across Cyprus. Same-day appointments available.</p>
+      <a href="/#contact" class="btn-primary">Request a Free Inspection</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. All rights reserved. Licensed pest control operator in Cyprus.</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+.blog-index-hero {
+  background: var(--navy);
+  padding: 7rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.blog-index-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 80px
+  );
+}
+.blog-index-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.blog-index-hero .section-tag { margin-bottom: 0.8rem; display: inline-block; }
+.blog-index-hero h1 {
+  color: white;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.blog-index-hero h1 span { color: var(--red); }
+.blog-index-hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 500px; }
+
+.blog-index-section { padding: 4rem 1.5rem 5rem; }
+.blog-index-inner { max-width: 1100px; margin: 0 auto; }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--gray-mid);
+  border-radius: 12px;
+  padding: 1.8rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(26,35,64,0.1);
+  border-color: var(--red);
+}
+.blog-card-featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  gap: 2rem;
+  background: var(--navy);
+  border-color: transparent;
+  color: white;
+  align-items: center;
+  padding: 2.2rem 2.5rem;
+}
+@media (max-width: 700px) {
+  .blog-card-featured { flex-direction: column; grid-column: auto; }
+}
+
+.blog-card-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  margin-bottom: 0.6rem;
+}
+.blog-card-featured .blog-card-category { color: var(--red-light); }
+
+.blog-card-title {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0.7rem 0;
+  flex: 1;
+}
+.blog-card-featured .blog-card-title {
+  color: white;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  flex: 0;
+}
+
+.blog-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.blog-card-featured .blog-card-desc {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  flex: 1;
+}
+
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-mid);
+}
+.blog-card-featured .blog-card-meta {
+  color: rgba(255,255,255,0.45);
+  border-top-color: rgba(255,255,255,0.1);
+}
+.blog-meta-dot { color: var(--red); }
+
+.blog-cta-banner {
+  background: var(--red);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.blog-cta-inner { max-width: 600px; margin: 0 auto; }
+.blog-cta-banner h2 { color: white; font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 0.8rem; }
+.blog-cta-banner p { color: rgba(255,255,255,0.85); margin-bottom: 1.6rem; }
+.blog-cta-banner .btn-primary { background: white; color: var(--red); }
+.blog-cta-banner .btn-primary:hover { background: var(--gray-light); }
+</style>

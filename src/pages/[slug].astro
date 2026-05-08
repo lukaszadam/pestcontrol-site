@@ -49,6 +49,7 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
         </div>
       </li>
       <li><a href="#why-local">Why Local</a></li>
+      <li><a href="/blog/">Blog</a></li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
     </ul>
   </nav>
@@ -126,7 +127,7 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
         <img src={page.image.src} alt={page.image.alt} loading="eager" />
         <figcaption>
           <span>{page.image.caption}</span>
-          {page.image.credit && <a href={page.image.creditUrl} target="_blank" rel="noreferrer">{page.image.credit}</a>}
+          {(page.image as any).credit && <a href={(page.image as any).creditUrl} target="_blank" rel="noreferrer">{(page.image as any).credit}</a>}
         </figcaption>
       </figure>
     </section>

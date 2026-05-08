@@ -3,15 +3,15 @@ import { cityPages } from '../data/cityPages.js';
 const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
+const blogSlugs = [
+  'pest-control-chemicals-pet-safety',
+];
+
 const urls = [
-  {
-    loc: '/',
-    priority: '1.0',
-  },
-  ...cityPages.map((page) => ({
-    loc: `/${page.slug}/`,
-    priority: '0.8',
-  })),
+  { loc: '/', priority: '1.0' },
+  { loc: '/blog/', priority: '0.7' },
+  ...blogSlugs.map((slug) => ({ loc: `/blog/${slug}/`, priority: '0.6' })),
+  ...cityPages.map((page) => ({ loc: `/${page.slug}/`, priority: '0.8' })),
 ];
 
 export function GET() {

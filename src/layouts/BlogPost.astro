@@ -1,0 +1,339 @@
+---
+import '../styles/global.css';
+import { cityNavItems } from '../data/cityPages.js';
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{frontmatter.title} | PestControl Cyprus Blog</title>
+  <meta name="description" content={frontmatter.description} />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="2.5" ry="1.8" fill="white"/>
+          <ellipse cx="12" cy="13" rx="3.5" ry="2.5" fill="white"/>
+          <ellipse cx="12" cy="19" rx="2" ry="1.8" fill="white"/>
+          <line x1="8.5" y1="11" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="13" x2="5" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="15" x2="5" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="11" x2="19" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="13" x2="19" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="15" x2="19" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Pest<span>Control</span> Cyprus</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/#areas">Areas</a>
+        <div class="nav-dropdown-menu">
+          {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <div class="blog-post-hero">
+    <div class="blog-post-hero-inner">
+      <a href="/blog/" class="blog-back-link">&larr; All Articles</a>
+      <span class="section-tag">{frontmatter.category}</span>
+      <h1>{frontmatter.title}</h1>
+      <div class="blog-post-meta">
+        <span>{frontmatter.date}</span>
+        <span class="blog-meta-dot">·</span>
+        <span>{frontmatter.readTime} min read</span>
+      </div>
+    </div>
+  </div>
+
+  <article class="blog-post-body">
+    <div class="blog-post-content">
+      <slot />
+    </div>
+
+    <aside class="blog-post-sidebar">
+      <div class="sidebar-cta">
+        <h3>Need Help Now?</h3>
+        <p>Our certified technicians are ready to inspect your property and eliminate the problem fast.</p>
+        <a href="/#contact" class="btn-primary">Get a Free Quote</a>
+        <a href="tel:+35794107560" class="btn-outline" style="margin-top: 0.6rem; display: inline-block;">Call +357 94 107 560</a>
+      </div>
+      <div class="sidebar-links">
+        <h4>All Articles</h4>
+        <ul>
+          <li><a href="/blog/pest-control-chemicals-pet-safety/">How Pest Control Chemicals Work</a></li>
+        </ul>
+      </div>
+    </aside>
+  </article>
+
+  <section class="blog-cta-banner">
+    <div class="blog-cta-inner">
+      <h2>Dealing With a Pest Problem?</h2>
+      <p>Fast, licensed, and eco-friendly pest control across Cyprus. Same-day appointments available.</p>
+      <a href="/#contact" class="btn-primary">Request a Free Inspection</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. All rights reserved. Licensed pest control operator in Cyprus.</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+.blog-post-hero {
+  background: var(--navy);
+  padding: 7rem 1.5rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.blog-post-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 80px
+  );
+}
+.blog-post-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.blog-back-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  transition: color 0.2s;
+}
+.blog-back-link:hover { color: white; }
+.blog-post-hero .section-tag {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.blog-post-hero h1 {
+  color: white;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.blog-post-meta {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.blog-meta-dot { color: var(--red); }
+
+.blog-post-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .blog-post-body { grid-template-columns: 1fr; }
+  .blog-post-sidebar { order: -1; }
+}
+
+.blog-post-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+}
+:global(.blog-post-content h2) {
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin: 0 0 0.8rem;
+  padding-top: 3.5rem;
+  text-transform: uppercase;
+}
+:global(.blog-post-content h2:first-child) { padding-top: 0; }
+:global(.blog-post-content h3) {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin: 0 0 0.6rem;
+  padding-top: 2.5rem;
+  text-transform: uppercase;
+}
+:global(.blog-post-content h3:first-child) { padding-top: 0; }
+:global(.blog-post-content p) { margin-bottom: 1.2rem; }
+:global(.blog-post-content ul), :global(.blog-post-content ol) {
+  margin: 0.8rem 0 1.2rem 1.4rem;
+}
+:global(.blog-post-content li) { margin-bottom: 0.4rem; }
+:global(.blog-post-content strong) { color: var(--navy); }
+:global(.blog-post-content a) { color: var(--red); text-decoration: underline; }
+:global(.blog-post-content blockquote) {
+  border-left: 4px solid var(--red);
+  padding: 0.8rem 1.2rem;
+  margin: 1.4rem 0;
+  background: var(--gray-light);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Chemical cards */
+.chem-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+@media (max-width: 600px) { .chem-cards { grid-template-columns: 1fr; } }
+.chem-card {
+  border: 1px solid var(--gray-mid);
+  border-radius: 10px;
+  padding: 1.2rem;
+  background: var(--gray-light);
+}
+.chem-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.chem-card-header strong { font-size: 1rem; color: var(--navy); }
+.chem-card p { font-size: 0.9rem; margin: 0; color: var(--text-muted); }
+.chem-risk {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+.risk-low { background: #e6f4ea; color: #2d7a3a; }
+.risk-medium { background: #fff3e0; color: #b35c00; }
+.risk-high { background: #fde8e8; color: #c0392b; }
+
+/* Callout boxes */
+.callout {
+  display: flex;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.6rem 0;
+  align-items: flex-start;
+}
+.callout-warning { background: #fff8e1; border: 1px solid #f5c842; }
+.callout-info { background: #e8f4fd; border: 1px solid #90caf9; }
+.callout-icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; padding-top: 0.1rem; }
+.callout-body strong { display: block; font-size: 1rem; color: var(--navy); margin-bottom: 0.4rem; }
+.callout-body p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+.callout-body p:last-child { margin-bottom: 0; }
+.callout-body ul { margin: 0.4rem 0 0 1.2rem; }
+.callout-body li { font-size: 0.95rem; margin-bottom: 0.3rem; }
+
+.blog-post-sidebar { position: sticky; top: 80px; }
+.sidebar-cta {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+.sidebar-cta h3 {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+.sidebar-cta p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.sidebar-cta .btn-primary { width: 100%; text-align: center; }
+.sidebar-cta .btn-outline {
+  width: 100%;
+  text-align: center;
+  display: block;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+.sidebar-cta .btn-outline:hover { border-color: white; }
+
+.sidebar-links {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.sidebar-links h4 {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.sidebar-links ul { list-style: none; padding: 0; }
+.sidebar-links li { border-bottom: 1px solid var(--gray-mid); }
+.sidebar-links li:last-child { border-bottom: none; }
+.sidebar-links a {
+  display: block;
+  padding: 0.55rem 0;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.sidebar-links a:hover { color: var(--red); }
+
+.blog-cta-banner {
+  background: var(--red);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.blog-cta-inner { max-width: 600px; margin: 0 auto; }
+.blog-cta-banner h2 {
+  color: white;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  margin-bottom: 0.8rem;
+}
+.blog-cta-banner p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.6rem;
+}
+.blog-cta-banner .btn-primary {
+  background: white;
+  color: var(--red);
+}
+.blog-cta-banner .btn-primary:hover { background: var(--gray-light); }
+</style>
