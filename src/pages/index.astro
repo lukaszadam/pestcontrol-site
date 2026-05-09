@@ -35,13 +35,14 @@ import { cityNavItems } from '../data/cityPages.js';
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#why-us">Why Us</a></li>
       <li class="nav-dropdown">
         <a href="#areas">Areas</a>
         <div class="nav-dropdown-menu">
           {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
         </div>
       </li>
-      <li><a href="#why-local">Why Local</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
     </ul>
