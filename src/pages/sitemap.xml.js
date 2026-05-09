@@ -4,7 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
-  '5-myths-about-pest-control',
+  '5-myths-pest-control',
   'pest-control-chemicals-pet-safety',
 ];
 
