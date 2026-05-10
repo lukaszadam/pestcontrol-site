@@ -146,3 +146,11 @@ fs.writeFileSync(SITEMAP_FILE, sitemapSrc.replace(
 console.log('Updated: src/pages/sitemap.xml.js');
 
 console.log(`\nDone — published at: /blog/${nextTopic.slug}/`);
+
+// Ping Google and Bing to notify them of the updated sitemap
+const sitemapUrl = encodeURIComponent('https://pestcontrolcyp.com/sitemap.xml');
+await Promise.allSettled([
+  fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
+  fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
+]);
+console.log('Pinged Google and Bing sitemap endpoints.');
