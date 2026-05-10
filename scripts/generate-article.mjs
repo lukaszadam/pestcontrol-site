@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
+import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -147,10 +148,30 @@ console.log('Updated: src/pages/sitemap.xml.js');
 
 console.log(`\nDone — published at: /blog/${nextTopic.slug}/`);
 
-// Ping Google and Bing to notify them of the updated sitemap
-const sitemapUrl = encodeURIComponent('https://pestcontrolcyp.com/sitemap.xml');
-await Promise.allSettled([
-  fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`),
-  fetch(`https://www.bing.com/ping?sitemap=${sitemapUrl}`),
-]);
-console.log('Pinged Google and Bing sitemap endpoints.');
+// Submit sitemap to Google Search Console
+if (process.env.GOOGLE_SERVICE_ACCOUNT_KEY) {
+  try {
+    const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_KEY);
+    const auth = new google.auth.GoogleAuth({
+      credentials,
+      scopes: ['https://www.googleapis.com/auth/webmasters'],
+    });
+    const searchconsole = google.searchconsole({ version: 'v1', auth });
+    await searchconsole.sitemaps.submit({
+      siteUrl: 'https://pestcontrolcyp.com/',
+      feedpath: 'https://pestcontrolcyp.com/sitemap.xml',
+    });
+    console.log('Sitemap submitted to Google Search Console.');
+  } catch (err) {
+    console.warn('Search Console submission failed:', err.message);
+  }
+} else {
+  // Fallback: simple ping
+  const sitemapUrl = encodeURIComponent('https://pestcontrolcyp.com/sitemap.xml');
+  await fetch(`https://www.google.com/ping?sitemap=${sitemapUrl}`);
+  console.log('Pinged Google sitemap endpoint.');
+}
+
+// Always ping Bing
+await fetch(`https://www.bing.com/ping?sitemap=${encodeURIComponent('https://pestcontrolcyp.com/sitemap.xml')}`);
+console.log('Pinged Bing.');
