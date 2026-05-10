@@ -1,0 +1,37 @@
+name: Publish Blog Article
+
+on:
+  schedule:
+    - cron: '0 8 */2 * *'  # Every 2 days at 8am UTC
+  workflow_dispatch:         # Allow manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm install
+
+      - name: Generate article
+        working-directory: scripts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node generate-article.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "Blog Bot"
+          git config user.email "bot@pestcontrolcyp.com"
+          git add src/
+          git diff --staged --quiet || git commit -m "Auto-publish blog article [skip ci]"
+          git push
