@@ -3,7 +3,7 @@ name: Publish Blog Article
 on:
   schedule:
     - cron: '0 8 */2 * *'  # Every 2 days at 8am UTC
-  workflow_dispatch:         # Allow manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -33,5 +33,5 @@ jobs:
           git config user.name "Blog Bot"
           git config user.email "bot@pestcontrolcyp.com"
           git add src/
-          git diff --staged --quiet || git commit -m "Auto-publish blog article [skip ci]"
+          git diff --staged --quiet || git commit -m "Auto-publish blog article"
           git push
