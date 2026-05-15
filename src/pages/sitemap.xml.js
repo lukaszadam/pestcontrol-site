@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'mosquito-proof-garden-pool-cyprus',
   'asian-tiger-mosquito-cyprus',
   'termite-warning-signs-cyprus',
   'cyprus-cockroach-season',
