@@ -59,18 +59,18 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
     <div class="hero-accent-circle"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-eyebrow">{page.eyebrow}</span>
+        <span class="hero-eyebrow">Connecting You With Licensed Experts in {page.city}</span>
         <h1>Pest Control<br/><span>{page.city}</span></h1>
         <p class="hero-subtitle">{page.subtitle}</p>
         <p class="hero-desc">{page.hero}</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Request Inspection</a>
-          <a href="tel:+35794107560" class="btn-outline">Call Now</a>
+          <a href="#contact" class="btn-primary">Get Matched Now</a>
+          <a href="#how-it-works" class="btn-outline">How It Works</a>
         </div>
         <div class="hero-stats">
           <div>
-            <div class="hero-stat-num">24/7</div>
-            <div class="hero-stat-label">Phone Support</div>
+            <div class="hero-stat-num">Fast</div>
+            <div class="hero-stat-label">Provider Matching</div>
           </div>
           <div>
             <div class="hero-stat-num">30</div>
@@ -146,7 +146,7 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
   <section class="services city-services" id="services">
     <div class="section-header">
       <span class="section-tag">Treatment Types</span>
-      <h2>Targeted Help for Local Pest Problems</h2>
+      <h2>Pest Control Services Available in {page.city}</h2>
       <div class="section-divider"></div>
       <p>{page.servicesIntro}</p>
     </div>
@@ -201,22 +201,10 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-info">
-        <span class="section-tag">Request a Visit</span>
-        <h2>Book Pest Control in {page.city}</h2>
+        <span class="section-tag">Get Matched</span>
+        <h2>Find a Pest Control Provider in {page.city}</h2>
         <div class="section-divider" style="margin: 0.8rem 0 1.2rem;"></div>
-        <p>Share your area, property type and the signs you have noticed. We will contact you with the next available appointment.</p>
-
-        <div class="contact-item">
-          <div class="contact-item-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M6.6 10.8C7.8 13.2 9.8 15.2 12.2 16.4L14 14.6C14.2 14.4 14.6 14.3 14.9 14.5C16 14.9 17.2 15.1 18.5 15.1C19 15.1 19.4 15.5 19.4 16V18.5C19.4 19 19 19.4 18.5 19.4C9.9 19.4 2.9 12.4 2.9 3.8C2.9 3.3 3.3 2.9 3.8 2.9H6.3C6.8 2.9 7.2 3.3 7.2 3.8C7.2 5.1 7.4 6.3 7.8 7.4C7.9 7.7 7.8 8.1 7.6 8.3Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="contact-item-text">
-            <strong>Phone</strong>
-            <a href="tel:+35794107560">+357 94 107 560</a>
-          </div>
-        </div>
+        <p>Share your area, property type and the signs you've noticed. We'll match you with the best licensed pest control provider in {page.city} within 2 hours.</p>
 
         <div class="contact-item">
           <div class="contact-item-icon">
@@ -241,25 +229,6 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
         <div class="form-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="city-area">{page.city} Area</label>
-            <input type="text" id="city-area" name="city-area" placeholder={page.areaPlaceholder} value={page.city} />
-          </div>
-          <div class="form-group">
-            <label for="pest">Pest Type</label>
-            <select id="pest" name="pest">
-              <option value="">What pest?</option>
-              <option>Ants</option>
-              <option>Cockroaches</option>
-              <option>Rodents</option>
-              <option>Bed Bugs</option>
-              <option>Mosquitoes</option>
-              <option>Wasps / Hornets</option>
-              <option>Not sure</option>
-            </select>
-          </div>
         </div>
         <div class="form-group">
           <label for="message">Message (optional)</label>

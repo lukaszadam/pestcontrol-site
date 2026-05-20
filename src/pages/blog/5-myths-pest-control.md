@@ -57,7 +57,7 @@ She bought a spray from the supermarket and dealt with it. Then another appeared
 
 By October, she had spent close to €90 on sprays, traps, and home remedies. She'd also, without knowing it, scattered the colony through her apartment by using a repellent-based spray that pushed them into new rooms rather than killing them at the source. What had started as a localised problem in the kitchen had, through entirely well-intentioned action, become a whole-apartment infestation.
 
-When she finally called us, our technician found the colony entry point in less than twenty minutes — a gap behind the pipework where it entered the wall from the building's shared riser. One targeted gel bait treatment, one exterior perimeter spray, and a recommendation to seal the gap with expanding foam. The cockroaches were gone in ten days.
+When she finally called a professional, the technician found the colony entry point in less than twenty minutes — a gap behind the pipework where it entered the wall from the building's shared riser. One targeted gel bait treatment, one exterior perimeter spray, and a recommendation to seal the gap with expanding foam. The cockroaches were gone in ten days.
 
 > "I kept thinking if I just found the right product. I didn't realise the problem wasn't the product. It was that I didn't know where they were coming from."
 
