@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'pest-control-shared-apartment-cyprus',
   'bed-bugs-cyprus',
   'ant-invasions-cyprus',
   'rats-mice-cyprus-homes',
