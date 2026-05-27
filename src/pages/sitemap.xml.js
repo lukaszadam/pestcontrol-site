@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'diy-vs-professional-pest-control-cyprus',
   'pest-control-stone-village-house-cyprus',
   'pest-control-shared-apartment-cyprus',
   'bed-bugs-cyprus',
