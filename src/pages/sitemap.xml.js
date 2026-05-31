@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'cyprus-pest-calendar',
   'pest-control-safe-children-babies',
   'diy-vs-professional-pest-control-cyprus',
   'pest-control-stone-village-house-cyprus',
