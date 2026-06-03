@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'what-happens-professional-pest-treatment',
   'scorpions-centipedes-spiders-cyprus',
   'cyprus-pest-calendar',
   'pest-control-safe-children-babies',
