@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'new-homeowner-pest-proofing-cyprus',
   'olive-citrus-trees-attract-pests-cyprus',
   'what-happens-professional-pest-treatment',
   'scorpions-centipedes-spiders-cyprus',
