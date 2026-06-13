@@ -4,6 +4,7 @@ const siteUrl = 'https://pestcontrolcyp.com';
 const lastmod = '2026-05-07';
 
 const blogSlugs = [
+  'year-round-pest-prevention-cyprus',
   'pest-control-cost-cyprus',
   'pest-control-block-flats-cyprus',
   'new-homeowner-pest-proofing-cyprus',
