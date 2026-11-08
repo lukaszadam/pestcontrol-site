@@ -1107,3 +1107,16 @@ footer strong {
   .services-grid { grid-template-columns: 1fr; }
   :root { --section-pad: 3.5rem 1.2rem; }
 }
+
+/* Audiences + FAQ */
+.audiences, .faq { padding: 4rem 1.5rem; }
+.audience-list { list-style: none; max-width: 800px; margin: 0 auto; padding: 0; display: grid; gap: 0.9rem; }
+.audience-list li { background: #fff; border-left: 4px solid var(--red); padding: 1rem 1.25rem; border-radius: 4px; line-height: 1.6; }
+.faq-list { max-width: 800px; margin: 0 auto; display: grid; gap: 0.75rem; }
+.faq-list details { background: #fff; border-radius: 6px; padding: 1rem 1.25rem; border: 1px solid rgba(0,0,0,0.08); }
+.faq-list summary { cursor: pointer; font-weight: 600; }
+.faq-list details p { margin-top: 0.75rem; line-height: 1.7; }
+
+.help-banner { background: var(--red, #C0392B); color: #fff; text-align: center; padding: 0.9rem 1.5rem; margin-top: 64px; }
+.help-banner + .hero { padding-top: 0; min-height: calc(100vh - 64px); }
+.help-banner p { max-width: 900px; margin: 0 auto; line-height: 1.5; font-size: 0.95rem; }
