@@ -75,7 +75,7 @@ import { operator } from '../data/operator.js';
           We are a free matching service, not a pest control company. All treatments are carried out by independent pest control operators. You only pay the provider, and only if you accept their quote.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Get Matched Now</a>
+          <a href="#contact" class="btn-primary">Contact Us</a>
           <a href="#how-it-works" class="btn-outline">How It Works</a>
         </div>
         <div class="hero-stats">
@@ -531,23 +531,11 @@ import { operator } from '../data/operator.js';
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" />
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
         </div>
         <div class="form-group">
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="+357 ..." />
-        </div>
-        <div class="form-group">
-          <label for="area">Area</label>
-          <input type="text" id="area" name="area" placeholder="Limassol, Paphos, Larnaca..." />
-        </div>
-        <div class="form-group">
-          <label for="pest">Type of pest</label>
-          <input type="text" id="pest" name="pest" placeholder="Cockroaches, rats, termites..." />
-        </div>
-        <div class="form-group">
-          <label for="message">Message (optional)</label>
-          <textarea id="message" name="message" placeholder="Describe the problem, property type, urgency..."></textarea>
+          <label for="message">What's the problem? (area, pest, property)</label>
+          <textarea id="message" name="message" placeholder="e.g. Cockroaches in my kitchen, Limassol apartment"></textarea>
         </div>
         <div class="form-group form-consent">
           <label style="display:flex; gap:10px; align-items:flex-start; font-size:0.85em; font-weight:400;">
