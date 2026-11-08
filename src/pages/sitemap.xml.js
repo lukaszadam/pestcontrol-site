@@ -31,6 +31,7 @@ const blogSlugs = [
 const urls = [
   { loc: '/', priority: '1.0' },
   { loc: '/blog/', priority: '0.7' },
+  { loc: '/privacy-policy/', priority: '0.3' },
   ...blogSlugs.map((slug) => ({ loc: `/blog/${slug}/`, priority: '0.6' })),
   ...cityPages.map((page) => ({ loc: `/${page.slug}/`, priority: '0.8' })),
 ];

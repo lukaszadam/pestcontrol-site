@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import { cityNavItems } from '../data/cityPages.js';
+import { operator } from '../data/operator.js';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy &amp; Legal Notice - PestControl Cyprus</title>
+  <meta name="description" content="Privacy policy and legal notice for PestControl Cyprus, a referral service connecting customers with independent pest control providers." />
+  <link rel="canonical" href="https://pestcontrolcyp.com/privacy-policy/" />
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="7" rx="2.5" ry="1.8" fill="white"/>
+          <ellipse cx="12" cy="13" rx="3.5" ry="2.5" fill="white"/>
+          <ellipse cx="12" cy="19" rx="2" ry="1.8" fill="white"/>
+          <line x1="8.5" y1="11" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="13" x2="5" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8.5" y1="15" x2="5" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="11" x2="19" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="13" x2="19" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="15.5" y1="15" x2="19" y2="17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="nav-logo-text">Pest<span>Control</span> Cyprus</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li class="nav-dropdown">
+        <a href="/#areas">Areas</a>
+        <div class="nav-dropdown-menu">
+          {cityNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </li>
+      <li><a href="/#why-local">Why Local</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <main style="max-width:780px; margin:0 auto; padding:140px 24px 80px; line-height:1.7;">
+    <h1 style="margin-bottom:0.5rem;">Privacy Policy &amp; Legal Notice</h1>
+    <p><em>Last updated: November 2026</em></p>
+
+    <h2>Who we are</h2>
+    <p>{operator.name ? <span>This website is operated by <strong>{operator.name}</strong>, {operator.address}. </span> : <span>This website is operated from Nicosia, Cyprus. </span>}
+    {operator.regNo && <span>Registration no.: {operator.regNo}. </span>}
+    {operator.vatNo && <span>VAT no.: {operator.vatNo}. </span>}
+    Contact: <a href={`mailto:${operator.email}`}>{operator.email}</a>.</p>
+
+    <h2>What we do (and do not do)</h2>
+    <p>PestControl Cyprus is a <strong>referral service</strong>. We are not a pest control company, we do not hold a pest control licence and we do not carry out treatments. When you send an enquiry, we pass it on to an independent partner pest control provider. Any contract for treatment is made directly between you and that provider. The provider, not us, is responsible for the work, its prices, any guarantee, its licences, insurance and the products it uses. Please ask your provider for proof of licence and insurance before booking.</p>
+
+    <h2>Data we collect</h2>
+    <p>When you use the contact form we collect your name, email address and the message you write (for example property type, pest problem and location). Our hosting provider may also process technical data such as your IP address in server logs.</p>
+
+    <h2>Why we use it, and the legal basis</h2>
+    <p>We use your data to pass your enquiry to one or more partner pest control providers so they can contact you. The legal basis is your consent (Art. 6(1)(a) GDPR), which you give by ticking the box on the form, and steps taken at your request before a contract (Art. 6(1)(b) GDPR).</p>
+
+    <h2>Who we share it with</h2>
+    <p>Your enquiry is shared with partner pest control providers in your area. Once a provider receives your data, it processes it as an independent controller under its own privacy policy. Our form is processed by our hosting and form provider (Netlify, Inc.), and email is handled by Proton AG (Switzerland). We do not sell your data.</p>
+
+    <h2>How long we keep it</h2>
+    <p>We keep enquiries for up to 12 months, then delete them, unless we are legally required to keep them longer.</p>
+
+    <h2>Your rights</h2>
+    <p>You have the right to access, correct or delete your data, to restrict or object to its processing, to data portability, and to withdraw your consent at any time (this does not affect earlier processing). Write to <a href={`mailto:${operator.email}`}>{operator.email}</a>. You may also complain to the Office of the Commissioner for Personal Data Protection of Cyprus (<a href="https://www.dataprotection.gov.cy">dataprotection.gov.cy</a>).</p>
+
+    <h2>Terms of use</h2>
+    <p>Information on this site, including the blog, is general and not professional advice. Statements about pests, products and costs are indicative only. Availability, response times, prices and guarantees are set by the individual provider and are not promised by us. To the extent permitted by law, we are not liable for the work of partner providers.</p>
+
+    <h2>Web design</h2>
+    <p><a href="https://webdesign-cyprus.com/">webdesign-cyprus.com</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. Referral service connecting customers with independent pest control providers. We do not carry out treatments.</p>
+  </footer>
+
+</body>
+</html>

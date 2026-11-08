@@ -65,7 +65,7 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
     <div class="hero-accent-circle"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-eyebrow">Connecting You With Licensed Experts in {page.city}</span>
+        <span class="hero-eyebrow">Connecting You With Local Providers in {page.city}</span>
         <h1>Pest Control<br/><span>{page.city}</span></h1>
         <p class="hero-subtitle">{page.subtitle}</p>
         <p class="hero-desc">{page.hero}</p>
@@ -79,12 +79,12 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
             <div class="hero-stat-label">Provider Matching</div>
           </div>
           <div>
-            <div class="hero-stat-num">30</div>
-            <div class="hero-stat-label">Day Guarantee</div>
+            <div class="hero-stat-num">Free</div>
+            <div class="hero-stat-label">Matching Service</div>
           </div>
           <div>
-            <div class="hero-stat-num">EU</div>
-            <div class="hero-stat-label">Approved Products</div>
+            <div class="hero-stat-num">Ask</div>
+            <div class="hero-stat-label">About Products Used</div>
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
         <span class="section-tag">Get Matched</span>
         <h2>Find a Pest Control Provider in {page.city}</h2>
         <div class="section-divider" style="margin: 0.8rem 0 1.2rem;"></div>
-        <p>Share your area, property type and the signs you've noticed. We'll match you with the best licensed pest control provider in {page.city} within 2 hours.</p>
+        <p>Share your area, property type and the signs you've noticed. We'll pass your request to a pest control provider in {page.city}. Response times depend on the provider.</p>
 
         <div class="contact-item">
           <div class="contact-item-icon">
@@ -240,6 +240,12 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
           <label for="message">Message (optional)</label>
           <textarea id="message" name="message" placeholder="Property type, pest signs, urgency, preferred time..."></textarea>
         </div>
+        <div class="form-group form-consent">
+          <label style="display:flex; gap:10px; align-items:flex-start; font-size:0.85em; font-weight:400;">
+            <input type="checkbox" name="consent" required style="width:auto; margin-top:3px;" />
+            <span>I agree that my name, email and message are shared with partner pest control providers so they can contact me, as described in the <a href="/privacy-policy/">Privacy Policy</a>.</span>
+          </label>
+        </div>
         <div class="form-submit">
           <button type="submit" class="btn-primary">Send {page.city} Request</button>
         </div>
@@ -248,7 +254,8 @@ const serviceLetters = ['A', 'C', 'R', 'B', 'M', 'W'];
   </section>
 
   <footer>
-    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. Working with licensed pest control operators in {page.city} and island-wide.</p>
+    <p>&copy; 2026 <strong>PestControl Cyprus</strong>. Referral service connecting customers with independent pest control providers in {page.city} and island-wide. We do not carry out treatments.</p>
+    <p style="margin-top: 8px; font-size: 0.85em;"> <a href="/privacy-policy/" style="color: inherit; text-decoration: underline;">Privacy Policy &amp; Legal Notice</a></p>
   </footer>
 
 </body>

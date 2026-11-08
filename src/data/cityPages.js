@@ -4,7 +4,7 @@ export const cityPages = [
     city: 'Paphos',
     title: 'Pest Control Paphos - Treatments for Homes, Villas and Businesses',
     description: 'Pest control in Paphos for villas, apartments, hotels, restaurants and offices. Local treatments for cockroaches, ants, rodents, bed bugs, mosquitoes and wasps.',
-    eyebrow: 'Local Paphos Technicians',
+    eyebrow: 'Paphos Pest Control Providers',
     subtitle: 'From Kato Paphos to Coral Bay',
     hero: 'Paphos pest problems often begin around villa gardens, pool terraces, warm kitchens and short-stay bedrooms. Your matched provider traces the source of the activity and applies a discreet treatment that suits the property, guests and season.',
     introTag: 'Local Conditions',
